@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals Quiz</title>
+</head>
+
+<body>
+    <header>
+        <section>
+            <a href="highScores.html">View High Scores</a>
+        </section>
+        <section>
+            <p>Time: <span id="timer">0</span></p>
+        </section>
+    </header>
+    <h1 id="main-title">Coding Quiz Challenge</h1>
+    <p id="start-text">
+        Try to answer the following code-related questions within the time limit.
+        Keep in mind that incorrect answers will penalize your your time by ten seconds!
+    </p>
+    <section id="initials-container" hidden>
+        <form id="enter-initials" action="">
+            <label for="initials">Enter your initials:</label>
+            <input type="text" name="initals" id="initials">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <button id="start-button">start Quiz</button>
+    <div id="answer-container" hidden>
+        <ul id="answer-options">
+            <li class="answer-button"></li>
+            <li class="answer-button"></li>
+            <li class="answer-button"></li>
+            <li class="answer-button"></li>
+        </ul>
+    </div>
+    <h2></h2>
+
+
+    <script src="assets/js/quizLogicScript.js"></script>
+</body>
+
+</html>
