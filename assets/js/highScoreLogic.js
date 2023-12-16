@@ -12,6 +12,7 @@ if (storedScores && storedInitials) {
         highScore.innerText = `${initials} - ${score}`;
         highScores.appendChild(highScore);
     }
+    highScores.hidden = false;
 }
 
 

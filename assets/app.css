@@ -1,0 +1,135 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+p {
+    font-size: 25px;
+    text-align: center;
+    max-width: 60vw;
+}
+
+a {
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0096c7;
+}
+
+a:hover {
+    color: #48cae4;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+label {
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    max-width: 200px;
+    padding: 6px;
+    font-size: 20px;
+    border: none;
+    background-color: #023047;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #219ebc;
+}
+
+.answer-button {
+    min-width: 320px;
+    text-align: start;
+    padding: 10px;
+    white-space: nowrap;
+    font-size: 20px;
+    border: none;
+    background-color: #023047;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.answer-button:hover {
+    background-color: #219ebc;
+}
+
+.button-div {
+    margin: 10px;
+}
+
+#main-title {
+    text-align: center;
+    font-size: 40px;
+}
+
+#high-scores-list {
+    width: 400px;
+}
+
+#high-score-body {
+    display: flex;
+    justify-content: center;
+}
+
+#high-score-main {
+    display: flex;
+    align-items: start;
+}
+
+li {
+    font-size: 30px;
+    margin: 10px;
+}
+
+ol {
+    background-color: #a2d2ff;
+    border-radius: 10px;
+}
+
+#clear {
+    margin-left: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+    #main-title {
+        font-size: 25px;
+    }
+
+    #start-text {
+        font-size: 20px;
+    }
+
+    #high-score-main {
+        display: flex;
+        flex-direction: column;
+        max-width: 100vw;
+        align-items: center;
+    }
+
+    #high-scores-list {
+        max-width: 80vw;
+    }
+
+    #high-score-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #clear {
+        margin-top: 10px;
+    }
+}
