@@ -1,15 +1,11 @@
+/* puts space around the anchor tag and timer */
 header {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-p {
-    font-size: 25px;
-    text-align: center;
-    max-width: 60vw;
-}
-
+/* changes the color and font size of the anchor tag */
 a {
     font-size: 25px;
     text-decoration: none;
@@ -17,39 +13,53 @@ a {
     color: #0096c7;
 }
 
+/* changes the color of the anchor tag when hovered over */
 a:hover {
     color: #48cae4;
 }
 
-h2 {
-    font-size: 30px;
-}
-
-label {
-    font-size: 20px;
-}
-
+/* displays everything in the main section in a column */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.button {
-    max-width: 200px;
-    padding: 6px;
+/* centers the p text and changes its font size */
+p {
+    font-size: 25px;
+    text-align: center;
+    max-width: 60vw;
+}
+
+/* changes the font size for the label of the highScores input */
+label {
     font-size: 20px;
-    border: none;
-    background-color: #023047;
-    color: white;
+}
+
+/* sets the font size for the h2 */
+h2 {
+    font-size: 30px;
+}
+
+/* gives the highScore list a background color and rounded corners */
+ol {
+    background-color: #a2d2ff;
     border-radius: 10px;
-    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #219ebc;
+/* sets the fonts size for the high scores on the highScore page */
+li {
+    font-size: 30px;
+    margin: 10px;
 }
 
+/* adds some margin between the answer buttons */
+.button-div {
+    margin: 10px;
+}
+
+/* sets styles for the answer buttons */
 .answer-button {
     min-width: 320px;
     text-align: start;
@@ -63,47 +73,57 @@ main {
     cursor: pointer;
 }
 
+/* changes the background color of the answer buttons when hovered over */
 .answer-button:hover {
     background-color: #219ebc;
 }
 
-.button-div {
-    margin: 10px;
+/* sets styles for every button with the class of button */
+.button {
+    max-width: 200px;
+    padding: 6px;
+    font-size: 20px;
+    border: none;
+    background-color: #023047;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
+/* changes the background color of buttons with the class of button when hovered over */
+.button:hover {
+    background-color: #219ebc;
+}
+
+/* sets the font size and centers the h1 */
 #main-title {
     text-align: center;
     font-size: 40px;
 }
 
-#high-scores-list {
-    width: 400px;
-}
-
+/* centers all elements on the highScore page */
 #high-score-body {
     display: flex;
     justify-content: center;
 }
 
+/* aligns the text on the highScore page to the left of their containers */
 #high-score-main {
     display: flex;
     align-items: start;
 }
 
-li {
-    font-size: 30px;
-    margin: 10px;
+/* sets the width of the high-scores-list */
+#high-scores-list {
+    width: 400px;
 }
 
-ol {
-    background-color: #a2d2ff;
-    border-radius: 10px;
-}
-
+/* adds some space between the back and clear buttons on the highScore page */
 #clear {
     margin-left: 10px;
 }
 
+/* displays the content in a column layout and resizes elements when viewing the app on a screen between 320 and 500px */
 @media (min-width: 320px) and (max-width: 500px) {
     #main-title {
         font-size: 25px;
