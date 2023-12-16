@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Quiz High Scores</title>
+    <link rel="stylesheet" href="assets/app.css">
 </head>
 
-<body>
-    <h1 id="high-score-title">High Scores</h1>
-    <ol id="high-scores-list">
-
-    </ol>
-    <button id="go-back">Go back</button>
-    <button id="clear">Clear high scores</button>
+<body id="high-score-body">
+    <main id="high-score-main">
+        <h1 id="high-score-title">High Scores</h1>
+        <section id="list-container">
+            <ol id="high-scores-list" hidden></ol>
+        </section>
+        <section id="high-score-buttons">
+            <button id="go-back" class="button">Go back</button>
+            <button id="clear" class="button">Clear high scores</button>
+        </section>
+    </main>
 
     <script src="assets/js/highScoreLogic.js"></script>
 </body>
