@@ -1,3 +1,4 @@
+// An array for the question objects
 const questions = [
     {
         question: 'JavaScript is an _______ language',
@@ -101,20 +102,30 @@ const questions = [
     }
 ]
 
+// targets the start button from the index.html
 const startButton = document.querySelector('#start-button');
+// targets the h1 from the index.html
 const questionElement = document.querySelector('#main-title');
+// targets the p tag with the id of start-text from the index.html
 const startText = document.querySelector('#start-text');
+// targets the section with the id answer-container from the index.html
 const answerContainer = document.querySelector('#answer-container');
+// targets the section that contains the initials form from the index.html
 const initialsContainer = document.querySelector('#initials-container')
+// targets the span with the id timer from the index.html
 const timerElement = document.querySelector('#timer');
+// targets the buttons with the class answer-button from the index.html
 const answerButtons = document.querySelectorAll('.answer-button');
+// targets the h2 from the index.html
 const feedback = document.querySelector('h2');
+// targets the input of the initials form from the index.html
 const initialsForm = document.querySelector('#enter-initials');
+//  sets global variables for timerInterval, remainingTime, and score
 let timerInterval;
 let remainingTime;
-
 let score = 0;
 
+// picks a random question object from the questions array, removes it and returns the removed object
 function getRandomQuestion(questions) {
     const randIndex = Math.floor(Math.random() * questions.length);
     const selectedQuestion = questions[randIndex];
@@ -122,14 +133,18 @@ function getRandomQuestion(questions) {
     return selectedQuestion;
 }
 
+// creates the currentQuestion variable and sets it equal to the result of the getRandomQuestion function
 let currentQuestion = getRandomQuestion(questions)
 
+// when clicked starts the quiz and calls the startTimeCountdown and showQuestion functions
 startButton.addEventListener('click', () => {
     gameStarted = true;
     startTimeCountdown();
     showQuestion(currentQuestion);
 });
 
+// sets the remaining time variable to 120 seconds and subtracts it by 1 every second.
+// Also changes the color of the timer to red if below 60 seconds. If the timer reaches 0, it ends the game.
 function startTimeCountdown() {
     remainingTime = 120;
     timerElement.innerText = remainingTime;
@@ -149,6 +164,7 @@ function startTimeCountdown() {
     }, 1000);
 }
 
+// if the game has started it hides the startText and start button and shows the current question with corresponding answer buttons
 function showQuestion(question) {
     if (!gameStarted) return;
     startText.style.display = 'none'
@@ -161,10 +177,15 @@ function showQuestion(question) {
     }
 }
 
+// checks for the users answer and compares it to the correct answer
 function checkAnswer(userAnswer, correctAnswer) {
     return userAnswer === correctAnswer;
 }
 
+// when the user clicks on an answer button, this function tests if they answer they chose was correct or wrong
+// if correct, gives feedback in green and adds 1 to the current score.
+// if wrong, gives feedback in red and reduces the timer by 10 seconds.
+// Checks if the questions array is empty. If yes, ends the game, if no then after a second displays the next question
 function handleAnswerClick(event) {
     const selectedAnswer = event.target.innerText;
     const isCorrect = checkAnswer(selectedAnswer, currentQuestion.correctAnswer);
@@ -192,6 +213,7 @@ function handleAnswerClick(event) {
     }, 1000);
 }
 
+// when the game is over hides the answer buttons and shows the input where you can enter your initials to save your score
 function gameOver() {
     initialsContainer.hidden = false;
     questionElement.innerText = 'Game Over!';
@@ -201,6 +223,9 @@ function gameOver() {
     feedback.innerText = '';
 }
 
+// when you enter your initials into the input, saves your initials and score to local storage.
+// when entering initials again while data already exists in the storage, adds the new input to the end of the array
+// if trying to submit an empty input, you are prompted to enter your initials
 initialsForm.addEventListener('submit', function (event) {
     event.preventDefault();
     const initials = document.querySelector('#initials').value;
@@ -211,7 +236,6 @@ initialsForm.addEventListener('submit', function (event) {
             initialsArray = [];
             scoreArray = [];
         }
-
         initialsArray.push(initials);
         scoreArray.push(score);
         localStorage.setItem('quizScores', JSON.stringify(scoreArray));
